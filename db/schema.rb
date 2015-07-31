@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731195059) do
+ActiveRecord::Schema.define(version: 20150801005656) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "activities_roles", id: false, force: :cascade do |t|
+    t.integer "activity_id"
+    t.integer "roles_id"
+  end
+
+  add_index "activities_roles", ["activity_id"], name: "index_activities_roles_on_activity_id"
+  add_index "activities_roles", ["roles_id"], name: "index_activities_roles_on_roles_id"
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
