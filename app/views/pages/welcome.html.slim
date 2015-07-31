@@ -1,18 +1,17 @@
-.welcome style="text-align:center"
+.container style="text-align:center"
   
-  h1 Welcome
+  h1 Welcome 
 
   br
 
-  button class="btn btn-lg btn-primary" = link_to 'New', '#'
-  
-  br
-  br
-
-  button class="btn btn-lg btn-success" = link_to 'Returning', login_path
+  = link_to 'New', '#', class: "btn btn-primary btn-block btn-lg"
   
   br
   br
 
-  button class="btn btn-info" = link_to 'Checkout', '#'
-    
+  = link_to 'Returning', login_path, class: "btn btn-block btn-success btn-lg"
+  
+  br
+  br
+
+  = link_to 'Checkout', '#', class: "btn btn-block btn-info btn-lg"    
