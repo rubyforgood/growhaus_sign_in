@@ -1,2 +1,9 @@
-div.container-fluid
-  h1 All your credentials are belong to me.
+div.container
+  = form_tag "/login", class: "form-signin"
+    h2.form-signin-heading Please sign in
+    = label_tag :inputEmail, "Email address", class: "sr-only"
+    = text_field :inputEmail, nil, type: "email", class: "form-control"
+    = label_tag :inputPassword, "Password", class: "sr-only"
+    = password_field_tag :inputPassword, nil, type: "password", class: "form-control"
+    div.checkbox
+    button.btn.btn-lg.btn-primary.btn-block Sign in
