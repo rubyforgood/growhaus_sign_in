@@ -59,3 +59,4 @@ group :development do
 end
 
 gem 'bootstrap-sass'
+gem 'slim', '~> 3.0.6'
