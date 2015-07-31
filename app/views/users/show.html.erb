@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>Address2:</strong>
+  <%= @user.address2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @user.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @user.state %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @user.zip_code %>
+</p>
+
+<p>
+  <strong>Emergency contact name:</strong>
+  <%= @user.emergency_contact_name %>
+</p>
+
+<p>
+  <strong>Emergency contact phone:</strong>
+  <%= @user.emergency_contact_phone %>
+</p>
+
+<p>
+  <strong>Waiver signature:</strong>
+  <%= @user.waiver_signature %>
+</p>
+
+<p>
+  <strong>Photo release:</strong>
+  <%= @user.photo_release %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
