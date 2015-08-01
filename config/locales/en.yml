@@ -51,6 +51,7 @@ en:
     editing_title: 'Editing User'
     index_title: 'Listing Users'
     new_title: 'New User'
+    english_waiver_url: '/waiver_and_release_of_liability.pdf'
   role:
     name: 'Role'
   error: 'error'
