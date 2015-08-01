@@ -51,6 +51,9 @@ en:
     editing_title: 'Editing User'
     index_title: 'Listing Users'
     new_title: 'New User'
+    waiver_url: '/waiver_and_release_of_liability.pdf'
+    volunteer_agreement: 'Volunteer Agreement'
+    volunteer_url: '/volunteer_agreement.pdf'
   role:
     name: 'Role'
   error: 'error'
