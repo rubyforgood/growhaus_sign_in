@@ -43,6 +43,7 @@ GEM
     autoprefixer-rails (5.2.1.1)
       execjs
       json
+    awesome_print (1.6.1)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -196,6 +197,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.2.0)
+      byebug (~> 5.0)
+      pry (~> 0.10)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     rack (1.6.4)
@@ -321,6 +325,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   better_errors
   bootstrap-sass
   bundler-audit
@@ -343,6 +348,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   pg
   poltergeist
+  pry-byebug
   pry-rails
   rails (= 4.2.3)
   rspec-rails
