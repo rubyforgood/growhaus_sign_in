@@ -40,8 +40,10 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @user.assign_attributes(user_params)
+
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.save
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -73,6 +75,6 @@ class UsersController < ApplicationController
       .permit(:role_id, :name, :email,
               :address, :address2, :city, :state, :zip_code,
               :emergency_contact_name, :emergency_contact_phone,
-              :waiver_signature, :photo_release)
+              :waiver_signature, :photo_release, :volunteer_signature)
   end
 end

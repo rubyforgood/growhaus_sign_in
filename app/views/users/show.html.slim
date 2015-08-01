@@ -45,8 +45,24 @@ p
   = @user.waiver_signature
 
 p
+  strong #{t('user.waiver_signed_at')}:
+  = @user.waiver_signed_at
+
+p
   strong #{t('user.photo_release')}:
   = @user.photo_release
+
+p
+  strong #{t('user.photo_release_signed_at')}:
+  = @user.photo_release_signed_at
+
+p
+  strong #{t('user.volunteer_signature')}:
+  = @user.volunteer_signature
+
+p
+  strong #{t('user.volunteer_signed_at')}:
+  = @user.volunteer_signed_at
 
 = link_to t('action.edit'), edit_user_path(@user)
 |

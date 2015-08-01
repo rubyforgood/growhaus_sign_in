@@ -11,5 +11,6 @@ FactoryGirl.define do
     emergency_contact_phone "MyString"
     waiver_signature "Name/s/"
     photo_release "Name/s/"
+    volunteer_signature "Name/s/"
   end
 end
