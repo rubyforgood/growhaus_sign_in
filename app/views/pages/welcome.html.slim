@@ -1,17 +1,17 @@
 .container style="text-align:center"
-  
-  h1 Welcome 
+
+  h1 = t('welcome.title')
 
   br
 
-  = link_to 'New', '#', class: "btn btn-primary btn-block btn-lg"
-  
+  = link_to t('welcome.new_link'), '#', class: "btn btn-primary btn-block btn-lg"
+
   br
   br
 
-  = link_to 'Returning', login_path, class: "btn btn-block btn-success btn-lg"
-  
+  = link_to t('welcome.returning_link'), login_path, class: "btn btn-block btn-success btn-lg"
+
   br
   br
 
-  = link_to 'Checkout', '#', class: "btn btn-block btn-info btn-lg"    
+  = link_to t('welcome.checkout_link'), '#', class: "btn btn-block btn-info btn-lg"
