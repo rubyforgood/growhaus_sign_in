@@ -18,13 +18,16 @@ es:
     emergency_contact_name: 'Contacto Autorizado de Emergencia'
     emergency_contact_phone_number: 'Número Teléfono de su Contacto Emergencia'
     waiver_signature: 'Firma de Exoneración de Responsabilidad Legal'
+    waiver_signed_at: 'Fecha de la Firma de Exoneración de Responsabilidad Legal'
     photo_release: 'Firma de Autorización para las Fotos'
+    photo_release_signed_at: 'Fecha de la Firma de Autorización para las Fotos'
     prohibited_this_from_being_saved: 'prohibida a este usario de ser salvado'
     editing_title: 'Editar Usuario'
     index_title: 'Usario Lista'
     new_title: 'Nuevo Usario'
     waiver_url: '/waiver_and_release_of_liability_spanish.pdf'
     volunteer_agreement: 'Acuerdo Voluntario'
+    volunteer_signed_at: 'Fecha de la Firma de Acuerdo Voluntario'
     volunteer_url: '/volunteer_agreement.pdf'
   error: 'error'
   action:
@@ -33,4 +36,3 @@ es:
     edit: 'Editar'
     back: 'Regresar'
     destroy: 'Eliminar'
-
