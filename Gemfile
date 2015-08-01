@@ -18,7 +18,9 @@ gem "figaro"
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'byebug'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'awesome_print'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -34,7 +36,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pry-rails'
   gem 'better_errors'
   gem 'guard'
   gem 'guard-rubocop'
