@@ -19,7 +19,19 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+# Here is an explanation of the message naming convention used
+#
+# language:
+#   page name:
+#     message name:
+
 en:
-  pagename:
-    sectionofthepage:
-      messagetitle: "Hello world" # remove me
+  login:
+    email_address: 'Email Address'
+    password: 'Password'
+    log_in: 'Log In'
+  welcome:
+    title: 'Welcome'
+    new_link: 'New'
+    returning_link: 'Returning'
+    checkout_link: 'Checkout'
