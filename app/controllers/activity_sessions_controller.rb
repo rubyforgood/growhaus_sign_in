@@ -29,16 +29,18 @@ class ActivitySessionsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @activity_session.update(activity_session_params)
-        format.html { redirect_to welcome_path, notice: 'Thank you!' }
-      end
+    @activity_session = ActivitySession.find activity_session_params["id"]
+    @activity_session.close if @activity_session && activity_session_params["checkout"] == "true"
+    if @activity_session.closed?
+      redirect_to welcome_path, notice: 'Thank you!'
+    else
+      redirect_to welcome_path, alert: 'Unable to check out. Please contact an admin'
     end
   end
 
   private
 
   def activity_session_params
-    params.permit(:user_id, :activity_id)
+    params.permit(:user_id, :activity_id, :id, :checkout)
   end
 end 
