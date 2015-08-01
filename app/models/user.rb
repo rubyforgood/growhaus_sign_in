@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :role
+  has_many :activity_sessions
 
   has_role_intern = ->(user) { user.role_name == "Intern" }
   validates :name, presence: true
