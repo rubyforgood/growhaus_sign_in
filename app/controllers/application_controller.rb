@@ -4,6 +4,18 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_filter :verify_authenticity_token
+
+  def verify_authenticity_token
+    true
+  end
+
+  helper_method :current_user
+
+  def current_user
+    @current_user ||= Staff.find_by(id: session[:user_id])
+  end
+
   before_action :set_locale, :set_i18n_toggle
 
   def set_locale
