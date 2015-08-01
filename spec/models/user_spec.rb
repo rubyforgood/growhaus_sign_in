@@ -4,7 +4,8 @@ RSpec.describe User, type: :model do
   let(:valid_attributes) do
     {
       name: "Bob User",
-      role: Role.find_by(name: "Visitor")
+      role: Role.find_by(name: "Visitor"),
+      waiver_signature: "Bob User/s/"
     }
   end
 

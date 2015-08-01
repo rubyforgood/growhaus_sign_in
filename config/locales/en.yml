@@ -38,6 +38,7 @@ en:
   user:
     name: 'Name'
     email: 'Email'
+    email_confirmation: 'Confirm Email'
     address: 'Address'
     city: 'City'
     state: 'State'
@@ -50,6 +51,8 @@ en:
     editing_title: 'Editing User'
     index_title: 'Listing Users'
     new_title: 'New User'
+  role:
+    name: 'Role'
   error: 'error'
   action:
     are_you_sure: 'Are you sure?'

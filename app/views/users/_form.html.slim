@@ -1,19 +1,23 @@
 = form_for(@user) do |f|
   - if @user.errors.any?
     div id="error_explanation"
-      h2 #{
-        pluralize(@user.errors.count, t("error"))} #{
-        t('user.prohibited_this_from_beging_saved')}:
+      h2 #{pluralize(@user.errors.count, t("error"))}
+         #{t('user.prohibited_this_from_beging_saved')}:
 
   ul
     - @user.errors.full_messages.each do |message|
       li = message
 
   div class="field"
+    = f.label :role_id
+    br
+    = collection_select(:user, :role_id, Role.all, :id, :name)
+
+  div class="field"
     = f.label t('user.name')
     br
     = f.text_field :name
-    
+
   div class="field"
     = f.label t('user.email')
     br
@@ -63,6 +67,6 @@
     = f.label t('user.photo_release')
     br
     = f.text_field :photo_release
-    
+
   div class="actions"
     = f.submit

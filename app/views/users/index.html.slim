@@ -16,6 +16,7 @@ table class="datatables"
       th = t('user.emergency_contact_phone')
       th = t('user.waiver_signature')
       th = t('user.photo_release')
+      th = t('user.role')
       th
       th
       th
@@ -34,6 +35,7 @@ table class="datatables"
         td = user.emergency_contact_phone
         td = user.waiver_signature
         td = user.photo_release
+        td = user.role_name
         td = link_to t('action.show'), user
         td = link_to t('action.edit'), edit_user_path(user)
         td = link_to t('action.destroy'), user, method: :delete,
