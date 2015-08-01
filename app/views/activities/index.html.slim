@@ -1,15 +1,16 @@
-h1 = t('activity.index_title')
+div.container
+  h1.center-block = t('activity.index_title')
 
-table.table.table-striped
-  thead
-    tr
-      th = t('activity.name')
+  table.table.table-striped
+    thead
+      tr
+        th
 
-    tbody
-      - @activities.each do |activity|
-        tr
-          td
-            = form_tag "/activity_sessions", method: "post" do
-              = hidden_field_tag :user_id, @user.id if @user
-              = hidden_field_tag :activity_id, activity.id
-              = button_tag activity.name
+      tbody
+        - @activities.each do |activity|
+          tr
+            td
+              = form_tag "/activity_sessions", method: "post" do
+                = hidden_field_tag :user_id, @user.id if @user
+                = hidden_field_tag :activity_id, activity.id
+                = button_tag activity.name, class: "btn btn-block"
