@@ -11,6 +11,7 @@ es:
   user:
     name: 'Nombre'
     email: 'Correo Electrónico'
+    email_confirmation: 'Confirmar Correo'
     address: 'Dirección'
     city: 'Ciudad'
     state: 'Estado'
@@ -26,6 +27,8 @@ es:
     waiver_url: '/waiver_and_release_of_liability_spanish.pdf'
     volunteer_agreement: 'Acuerdo Voluntario'
     volunteer_url: '/volunteer_agreement.pdf'
+  role:
+    name: 'Trabajo'
   error: 'error'
   action:
     are_you_sure: 'Estás Seguro?'
