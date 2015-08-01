@@ -23,6 +23,9 @@ es:
     editing_title: 'Editar Usuario'
     index_title: 'Usario Lista'
     new_title: 'Nuevo Usario'
+    waiver_url: '/waiver_and_release_of_liability_spanish.pdf'
+    volunteer_agreement: 'Acuerdo Voluntario'
+    volunteer_url: '/volunteer_agreement.pdf'
   error: 'error'
   action:
     are_you_sure: 'Estás Seguro?'

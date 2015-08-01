@@ -58,8 +58,8 @@
     br
     = f.text_field :emergency_contact_phone
 
-  iframe heigh="200px;" src = "#{'user.english_waiver_url'}"
-  
+  iframe height="200px" src="#{ t('user.waiver_url') }"
+
   div class="field"
     = f.label t('user.waiver_signature')
     br
@@ -69,6 +69,11 @@
     = f.label t('user.photo_release')
     br
     = f.text_field :photo_release
+
+  iframe height="200px" src="#{ t('user.volunteer_url') }"
+
+  div class="field"
+    = f.label t('user.volunteer_agreement')
 
   div class="actions"
     = f.submit
