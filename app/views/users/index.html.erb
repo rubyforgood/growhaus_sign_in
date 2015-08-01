@@ -1,21 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Users</h1>
+<h1><%= t('user.index_title') %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>Address2</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip code</th>
-      <th>Emergency contact name</th>
-      <th>Emergency contact phone</th>
-      <th>Waiver signature</th>
-      <th>Photo release</th>
+      <th><%= t('user.name') %></th>
+      <th><%= t('user.email') %></th>
+      <th><%= t('user.address') %></th>
+      <th><%= t('user.address') %></th>
+      <th><%= t('user.city') %></th>
+      <th><%= t('user.state') %></th>
+      <th><%= t('user.zip_code') %></th>
+      <th><%= t('user.emergency_contact_name') %></th>
+      <th><%= t('user.emergency_contact_phone') %></th>
+      <th><%= t('user.waiver_signature') %></th>
+      <th><%= t('user.photo_release') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,9 +34,10 @@
         <td><%= user.emergency_contact_phone %></td>
         <td><%= user.waiver_signature %></td>
         <td><%= user.photo_release %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('action.show'), user %></td>
+        <td><%= link_to t('action.edit'), edit_user_path(user) %></td>
+        <td><%= link_to t('action.destroy'), user, method: :delete,
+                        data: { confirm: t('action.are_you_sure') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -44,4 +45,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to t('user.new_title'), new_user_path %>

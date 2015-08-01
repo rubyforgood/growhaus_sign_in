@@ -1,59 +1,59 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('user.name') %>:</strong>
   <%= @user.name %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong><%= t('user.email') %>:</strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong><%= t('user.address') %>:</strong>
   <%= @user.address %>
 </p>
 
 <p>
-  <strong>Address2:</strong>
+  <strong><%= t('user.address') %>:</strong>
   <%= @user.address2 %>
 </p>
 
 <p>
-  <strong>City:</strong>
+  <strong><%= t('user.city') %>:</strong>
   <%= @user.city %>
 </p>
 
 <p>
-  <strong>State:</strong>
+  <strong><%= t('user.state') %>:</strong>
   <%= @user.state %>
 </p>
 
 <p>
-  <strong>Zip code:</strong>
+  <strong><%= t('user.zip_code') %>:</strong>
   <%= @user.zip_code %>
 </p>
 
 <p>
-  <strong>Emergency contact name:</strong>
+  <strong><%= t('user.emergency_contact_name') %>:</strong>
   <%= @user.emergency_contact_name %>
 </p>
 
 <p>
-  <strong>Emergency contact phone:</strong>
+  <strong><%= t('user.emergency_contact_phone') %>:</strong>
   <%= @user.emergency_contact_phone %>
 </p>
 
 <p>
-  <strong>Waiver signature:</strong>
+  <strong><%= t('user.waiver_signature') %>:</strong>
   <%= @user.waiver_signature %>
 </p>
 
 <p>
-  <strong>Photo release:</strong>
+  <strong><%= t('user.photo_release') %>:</strong>
   <%= @user.photo_release %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to t('action.edit'), edit_user_path(@user) %> |
+<%= link_to t('action.back'), users_path %>
