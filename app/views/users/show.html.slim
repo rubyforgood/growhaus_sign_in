@@ -1,0 +1,49 @@
+p id="notice" = notice
+
+p
+  strong #{t('user.name')}:
+  = @user.name
+
+p
+  strong #{t('user.email')}:
+  = @user.email
+
+p
+  strong #{t('user.address')}:
+  = @user.address
+
+p
+  strong #{t('user.address')}:
+  = @user.address2
+
+p
+  strong #{t('user.city')}:
+  = @user.city
+
+p
+  strong #{t('user.state')}:
+  = @user.state
+
+p
+  strong #{t('user.zip_code')}:
+  = @user.zip_code
+
+p
+  strong #{t('user.emergency_contact_name')}:
+  = @user.emergency_contact_name
+
+p
+  strong #{t('user.emergency_contact_phone')}:
+  = @user.emergency_contact_phone
+
+p
+  strong #{t('user.waiver_signature')}:
+  = @user.waiver_signature
+
+p
+  strong #{t('user.photo_release')}:
+  = @user.photo_release
+
+= link_to t('action.edit'), edit_user_path(@user)
+|
+= link_to t('action.back'), users_path
