@@ -1,0 +1,14 @@
+h1 = t('activity_session.index_title')
+
+table.datatables
+  thead
+    tr
+      th = t('activity_session.name')
+      th = t('activity_session.start_time')
+
+    tbody
+      - @activity_sessions.each do |activity_session|
+        tr
+          td = link_to activity_session.activity.name, "/activitysession"
+
+= link_to t('check_in'), user_activities_path

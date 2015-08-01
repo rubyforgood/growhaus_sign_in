@@ -1,0 +1,11 @@
+h1 = t('activity.index_title')
+
+table.datatables
+  thead
+    tr
+      th = t('activity.name')
+
+    tbody
+      - @activities.each do |activity|
+        tr
+          td = link_to activity.name, "/new_activity_session_path"

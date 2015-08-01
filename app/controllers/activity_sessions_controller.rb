@@ -1,7 +1,12 @@
-class ActivitySessionController < ApplicationController
+class ActivitySessionsController < ApplicationController
 
   def index
-    @activity_sessions = ActivitySession.all
+    user = User.find_by(id: activity_session_params["user_id"])
+    if user
+      @activity_sessions = user.activity_sessions
+    else
+      @activity_sessions = ActivitySession.all
+    end
   end
 
   def show
@@ -34,6 +39,6 @@ class ActivitySessionController < ApplicationController
   private
 
   def activity_session_params
-    params.require(:activity_session).permit(:user_id, :activity_id)
+    params.permit(:user_id, :activity_id)
   end
 end 

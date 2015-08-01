@@ -14,6 +14,7 @@ roles = roles.map do |t|
   Role.find_or_create_by(name: t)
 end
 
+# Create activities
 activities_volunteer = ["Food Box Sorting", "Cosechando Salud",
                         "Hydroponics Farm", "Aquaponics Farm", "Growasis",
                         "Mushroom Farm", "Education",
