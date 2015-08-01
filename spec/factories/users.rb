@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user do
     name "MyString"
-    email "MyString"
+    email "email@example.com"
     address "MyString"
     address2 "MyString"
     city "MyString"
@@ -9,7 +9,7 @@ FactoryGirl.define do
     zip_code "MyString"
     emergency_contact_name "MyString"
     emergency_contact_phone "MyString"
-    waiver_signature "MyString"
-    photo_release "MyString"
+    waiver_signature "Name/s/"
+    photo_release "Name/s/"
   end
 end
