@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'poltergeist'
   # Don't gitblame me later. Not my decision!
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
