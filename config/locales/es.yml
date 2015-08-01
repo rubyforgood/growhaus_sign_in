@@ -1,2 +1,33 @@
 es:
-  hello: "Hola mundo" # remove me
+  login:
+    email_address: 'Correo Electrónico'
+    password: 'Contraseña'
+    log_in: 'Iniciar Sesión'
+  welcome:
+    title: 'Bienvenido'
+    new_link: 'Nuevo'
+    returning_link: 'Volver'
+    checkout_link: 'Salir'
+  user:
+    name: 'Nombre'
+    email: 'Correo Electrónico'
+    address: 'Dirección'
+    city: 'Ciudad'
+    state: 'Estado'
+    zip_code: 'Código Postal'
+    emergency_contact_name: 'Contacto Autorizado de Emergencia'
+    emergency_contact_phone_number: 'Número Teléfono de su Contacto Emergencia'
+    waiver_signature: 'Firma de Exoneración de Responsabilidad Legal'
+    photo_release: 'Firma de Autorización para las Fotos'
+    prohibited_this_from_being_saved: 'prohibida a este usario de ser salvado'
+    editing_title: 'Editar Usuario'
+    index_title: 'Usario Lista'
+    new_title: 'Nuevo Usario'
+  error: 'error'
+  action:
+    are_you_sure: 'Estás Seguro?'
+    show: 'Mostrar'
+    edit: 'Editar'
+    back: 'Regresar'
+    destroy: 'Eliminar'
+
