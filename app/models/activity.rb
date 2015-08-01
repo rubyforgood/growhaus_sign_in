@@ -1,6 +1,6 @@
 class Activity < ActiveRecord::Base
   
-  has_one :role
+  has_and_belongs_to_many :role
   has_many :users, through: :roles
 
 end
