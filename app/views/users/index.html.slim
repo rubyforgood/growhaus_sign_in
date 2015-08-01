@@ -2,7 +2,7 @@ p id="notice" = notice
 
 h1 = t('user.index_title')
 
-table
+table class="datatables"
   thead
     tr
       th = t('user.name')
@@ -16,7 +16,9 @@ table
       th = t('user.emergency_contact_phone')
       th = t('user.waiver_signature')
       th = t('user.photo_release')
-      th colspan="3"
+      th
+      th
+      th
 
   tbody
     - @users.each do |user|

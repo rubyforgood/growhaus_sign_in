@@ -61,3 +61,4 @@ end
 
 gem 'bootstrap-sass'
 gem 'slim', '~> 3.0.6'
+gem 'jquery-datatables-rails', '~>3.3.0'
