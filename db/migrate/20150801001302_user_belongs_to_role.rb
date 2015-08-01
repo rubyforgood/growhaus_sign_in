@@ -1,7 +1,7 @@
 class UserBelongsToRole < ActiveRecord::Migration
   def change
     change_table :users do |t|
-      t.integer :role_id
+      t.belongs_to :role
     end
   end
 end
