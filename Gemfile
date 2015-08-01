@@ -56,6 +56,7 @@ group :development do
   gem 'guard-rspec'
   gem 'rubocop'
   gem 'bundler-audit'
+  gem 'i18n-spec'
 end
 
 gem 'bootstrap-sass'
