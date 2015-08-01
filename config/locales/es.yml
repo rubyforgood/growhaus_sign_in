@@ -39,3 +39,11 @@ es:
     edit: 'Editar'
     back: 'Regresar'
     destroy: 'Eliminar'
+    check_in: 'Iniciar Sesión'
+    check_out: 'Cerrar Sesión'
+  activity_session:
+    name: 'Nombre de la Actividad'
+    start_time: 'Hora de inicio'
+    index_title: 'Sesiones Activas'
+  activity:
+    index_title: 'Actividades'
