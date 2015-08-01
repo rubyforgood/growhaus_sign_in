@@ -8,4 +8,8 @@ table.datatables
     tbody
       - @activities.each do |activity|
         tr
-          td = link_to activity.name, "/new_activity_session_path"
+          td
+            = form_tag "/activity_sessions", method: "post" do
+              = hidden_field_tag :user_id, @user.id if @user
+              = hidden_field_tag :activity_id, activity.id
+              = button_tag activity.name

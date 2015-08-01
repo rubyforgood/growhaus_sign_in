@@ -1,9 +1,9 @@
 class ActivitiesController < ApplicationController
 
   def index
-    user = User.find_by(id: activity_params["user_id"])
-    if user
-      @activities = user.role.activity
+    @user = User.find_by(id: activity_params["user_id"])
+    if @user
+      @activities = @user.role.activity
     else
       @activities = Activity.all
     end
