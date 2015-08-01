@@ -1,13 +1,12 @@
-p id="notice" = notice
+div.container
+  h1 = t('user.index_title')
 
-h1 = t('user.index_title')
-
-table class="datatables"
-  thead
-    tr
-      th = t('user.name')
-
-  tbody
-    - @users.each do |user|
+  table.table.dataTable.table-striped
+    thead
       tr
-        td = link_to user.name, "/users/#{user.id}/activity_sessions"
+        th = t('user.name')
+
+    tbody
+      - @users.each do |user|
+        tr
+          td = link_to user.name, "/users/#{user.id}/activity_sessions"
