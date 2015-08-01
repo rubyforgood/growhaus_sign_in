@@ -27,6 +27,8 @@ activities_intern = ["Hydroponics Farm", "Aquaponics Farm",
                      "Community Education Intern", "Food Distribution Intern",
                      "Development Intern"]
 
+activities_visitor = ["Visiting"]
+
 activities_volunteer.each do |a|
   activity = Activity.find_or_create_by(name: a)
   activity.role << roles[0] unless activity.role.include? roles[0]
@@ -35,4 +37,9 @@ end
 activities_intern.each do |a|
   activity = Activity.find_or_create_by(name: a)
   activity.role << roles[2] unless activity.role.include? roles[2]
+end
+
+activities_visitor.each do |a|
+  activity = Activity.find_or_create_by(name: a)
+  activity.role << roles[1] unless activity.role.include? roles[1]
 end
