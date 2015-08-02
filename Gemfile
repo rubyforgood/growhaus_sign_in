@@ -27,7 +27,9 @@ gem "omniauth-google-oauth2"
 gem "figaro"
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'awesome_print'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -39,13 +41,13 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'poltergeist'
   # Don't gitblame me later. Not my decision!
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 end
 
 group :development do
-  gem 'pry-rails'
   gem 'better_errors'
   gem 'guard'
   gem 'guard-rubocop'
