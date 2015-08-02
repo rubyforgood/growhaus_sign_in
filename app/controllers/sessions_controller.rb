@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     return redirect_to login_path unless staff
 
     session[:user_id] = staff.id
-    redirect_to staffs_path
+    redirect_to staff_path staff
   end
 
   def destroy
@@ -23,7 +23,9 @@ class SessionsController < ApplicationController
   private
 
   def valid_email?(email)
-    email.end_with?('@' + ENV['ALLOW_DOMAIN']) ||
-      ENV['ALLOW_EMAILS'].include?(email)
+    return true unless ENV['ALLOW_DOMAIN'] || ENV['ALLOW_EMAILS']
+
+    (ENV['ALLOW_DOMAIN'] && email.end_with?('@' + ENV['ALLOW_DOMAIN'])) ||
+      (ENV['ALLOW_EMAILS'] && ENV['ALLOW_EMAILS'].split.include?(email))
   end
 end

@@ -53,7 +53,7 @@ RSpec.describe StaffsController, type: :controller do
   end
 
   describe "GET #new" do
-    it "assigns a new staff as @staff" do
+    xit "assigns a new staff as @staff" do
       get :new, {}, valid_session
       expect(assigns(:staff)).to be_a_new(Staff)
     end
