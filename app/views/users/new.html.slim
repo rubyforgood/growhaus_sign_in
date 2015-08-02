@@ -1,6 +1,5 @@
-.container
-  h1 = t('user.new_title')
+h1 = t('user.new_title')
 
-  = render 'form'
+= render 'form'
 
-  = link_to t('action.back'), users_path
+= button_to t('action.back'), users_path, method: "get", class: "btn btn-block btn-danger back-button"
