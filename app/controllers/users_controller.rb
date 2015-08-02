@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @locale = user_params["locale"]
   end
 
   # GET /users/1
@@ -71,8 +72,7 @@ class UsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user)
-      .permit(:role_id, :name, :email,
+    params.permit(:locale, :user, :role_id, :name, :email,
               :address, :address2, :city, :state, :zip_code,
               :emergency_contact_name, :emergency_contact_phone,
               :waiver_signature, :photo_release, :volunteer_signature)
