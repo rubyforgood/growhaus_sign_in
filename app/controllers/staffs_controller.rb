@@ -1,5 +1,7 @@
 class StaffsController < ApplicationController
   before_action :set_staff, only: [:show, :edit, :update, :destroy]
+  before_action :restrict_access
+  before_action :restrict_to_staff
 
   # GET /staffs
   # GET /staffs.json
@@ -62,13 +64,13 @@ class StaffsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_staff
-      @staff = Staff.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_staff
+    @staff = Staff.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def staff_params
-      params.require(:staff).permit(:name, :email, :image_url, :account_url, :provider, :token, :uid)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def staff_params
+    params.require(:staff).permit(:name, :email, :image_url, :account_url, :provider, :token, :uid)
+  end
 end
