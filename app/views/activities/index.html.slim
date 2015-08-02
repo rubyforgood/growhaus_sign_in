@@ -1,10 +1,9 @@
-div.container
-  h1.text-center = t('activity.index_title')
+h1.text-center = t('activity.index_title')
 
-  ul#activity-list.list-unstyled
-    - @activities.each do |activity|
-      li
-        = form_tag "/#{@locale}/activity_sessions", method: "post" do
-          = hidden_field_tag :user_id, @user.id if @user
-          = hidden_field_tag :activity_id, activity.id
-          = button_tag activity.name, class: "btn btn-block"
+ul#activity-list.list-unstyled
+  - @activities.each do |activity|
+    li
+      = form_tag "/#{@locale}/activity_sessions", method: "post" do
+        = hidden_field_tag :user_id, @user.id if @user
+        = hidden_field_tag :activity_id, activity.id
+        = button_tag activity.name, class: "btn btn-block"
