@@ -1,0 +1,17 @@
+p id="notice" = notice
+
+h1 Listing Staffs
+
+table
+  thead
+    tr
+      th Name
+      th Email
+      th
+
+  tbody
+    - @staffs.each do |staff|
+      tr
+        td = staff.name
+        td = staff.email
+        td = link_to 'Show', staff
