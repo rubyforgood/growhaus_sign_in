@@ -13,8 +13,8 @@
     div class="rolay" = @role.try(:name)
 
     br
-    div class="field required"
-      = f.label "#{t('user.name')} *"
+    div class="field"
+      = f.label "#{t('user.name')} *", class: "required"
       br
       = f.text_field :name
 
@@ -24,12 +24,12 @@
       = f.text_field :email
 
     div class="field"
-      = f.label t('user.address')
+      = f.label t('user.address1')
       br
       = f.text_field :address
 
     div class="field"
-      = f.label t('user.address')
+      = f.label t('user.address2')
       br
       = f.text_field :address2
 
@@ -49,13 +49,13 @@
       = f.text_field :zip_code
 
     - if @role.try(:name) == "Intern"
-      div class="field required"
-        = f.label t('user.emergency_contact_name')
+      div class="field"
+        = f.label "#{t('user.emergency_contact_name')} *", class: "required"
         br
         = f.text_field :emergency_contact_name
 
-      div class="field required"
-        = f.label t('user.emergency_contact_phone_number')
+      div class="field"
+        = f.label "#{t('user.emergency_contact_phone_number')} *", class: "required"
         br
         = f.text_field :emergency_contact_phone
 
@@ -73,8 +73,8 @@
     br
     iframe height="200px" src="#{ t('user.waiver_url') }"
 
-    div class="field required"
-      = f.label "#{t('user.waiver_signature')} *"
+    div class="field"
+      = f.label "#{t('user.waiver_signature')} *", class: "required"
       br
       = f.text_field "#{:waiver_signature}"
     p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado
@@ -86,8 +86,8 @@
         = f.text_field :photo_release
       p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado
     - else
-      div class="field required"
-        = f.label "#{t('user.photo_release')} *"
+      div class="field"
+        = f.label "#{t('user.photo_release')} *", class: "required"
         br
         = f.text_field :photo_release
       p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado    
@@ -96,8 +96,8 @@
     - if @role.try(:name) == "Volunteer"
       iframe height="200px" src="#{ t('user.volunteer_url') }"
 
-      div class="field required"
-        = f.label "#{t('user.volunteer_agreement')} *"
+      div class="field"
+        = f.label "#{t('user.volunteer_agreement')} *", class: "required"
         br
         = f.text_field :volunteer_signature
       p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado      
