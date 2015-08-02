@@ -8,7 +8,7 @@ html
     = csrf_meta_tags
 
   body
-    = render 'partials/i18n_toggle'
     = flash_messages
     div.container
+      = render 'partials/i18n_toggle'
       = yield
