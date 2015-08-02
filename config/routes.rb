@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :staffs
+
   scope '(:locale)', :locale => /en|es/ do
     get 'login' => 'pages#login'
     get 'welcome' => 'pages#welcome'

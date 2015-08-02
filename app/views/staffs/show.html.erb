@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @staff.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @staff.email %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @staff.image_url %>
+</p>
+
+<p>
+  <strong>Account url:</strong>
+  <%= @staff.account_url %>
+</p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @staff.provider %>
+</p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @staff.token %>
+</p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @staff.uid %>
+</p>
+
+<%= link_to 'Edit', edit_staff_path(@staff) %> |
+<%= link_to 'Back', staffs_path %>
