@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :reports
-  resources :staffs
+  resources :staffs do
+    resources :reports
+  end
 
   scope '(:locale)', :locale => /en|es/ do
     root "pages#login"

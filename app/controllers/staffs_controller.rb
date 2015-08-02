@@ -12,6 +12,7 @@ class StaffsController < ApplicationController
   # GET /staffs/1
   # GET /staffs/1.json
   def show
+    @staff = Staff.find(session[:user_id])
   end
 
   # GET /staffs/new
