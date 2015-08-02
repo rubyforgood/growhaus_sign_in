@@ -6,6 +6,6 @@ ul#activity-list.list-unstyled
       = form_tag "/#{@locale}/activity_sessions", method: "post" do
         = hidden_field_tag :user_id, @user.id if @user
         = hidden_field_tag :activity_id, activity.id
-        = button_tag activity.name, class: "btn btn-block"
+        = button_tag activity.name, class: "btn btn-block btn-primary"
 ul#navigation-buttons.list-unstyled
-  li = button_to t('action.go_back'), welcome_path, method: "get", class: "btn btn-block"
+  li = button_to t('action.go_back'), welcome_path, method: "get", class: "btn btn-block btn-danger"

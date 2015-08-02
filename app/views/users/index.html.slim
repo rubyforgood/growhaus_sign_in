@@ -1,6 +1,6 @@
-h1 = t('user.index_title')
+h1.text-center = t('user.index_title')
 
-table.table.dataTable.table-striped
+table.table.dataTable.growhaus-sign-in-table
   thead
     tr
       th = t('user.name')
@@ -10,4 +10,4 @@ table.table.dataTable.table-striped
         td = link_to user.name, user_activity_sessions_path(user.id)
 
 ul#navigation-buttons.list-unstyled
-  li = button_to t('action.go_back'), welcome_path, method: "get", class: "btn btn-block"
+  li = button_to t('action.go_back'), welcome_path, method: "get", class: "btn btn-block btn-danger"
