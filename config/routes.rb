@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reports
   resources :staffs
 
   scope '(:locale)', :locale => /en|es/ do
