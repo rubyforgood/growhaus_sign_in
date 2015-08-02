@@ -24,6 +24,6 @@ production:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  database: growhaus_sign_in
+  database: app_production
   username: rails
   password: <%= ENV['APP_DATABASE_PASSWORD'] %>
