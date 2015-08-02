@@ -9,6 +9,7 @@ es:
     new_query: '¿Qué te trae aquí hoy?'
     returning_link: 'Volver'
     checkout_link: 'Salir'
+    thank_you: 'Gracias!'
   user:
     name: 'Nombre'
     email: 'Correo Electrónico'

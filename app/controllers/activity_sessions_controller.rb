@@ -7,6 +7,7 @@ class ActivitySessionsController < ApplicationController
     else
       @activity_sessions = ActivitySession.all
     end
+    @locale = params["locale"]
   end
 
   def show
@@ -21,7 +22,7 @@ class ActivitySessionsController < ApplicationController
 
     respond_to do |format|
       if @activity_session.save
-        format.html { redirect_to welcome_path, notice: 'Thank you!' }
+        format.html { redirect_to welcome_path, notice: I18n.t('welcome.thank_you') }
       else
         format.html { render :new }
       end
@@ -32,7 +33,7 @@ class ActivitySessionsController < ApplicationController
     @activity_session = ActivitySession.find activity_session_params["id"]
     @activity_session.close if @activity_session && activity_session_params["checkout"] == "true"
     if @activity_session.closed?
-      redirect_to welcome_path, notice: 'Thank you!'
+      redirect_to welcome_path, notice: I18n.t('welcome.thank_you')
     else
       redirect_to welcome_path, alert: 'Unable to check out. Please contact an admin'
     end
