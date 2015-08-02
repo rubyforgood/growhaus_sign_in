@@ -9,5 +9,5 @@ html
 
   body
     = render 'partials/i18n_toggle'
-    == render 'layouts/messages'
+    = flash_messages
     = yield
