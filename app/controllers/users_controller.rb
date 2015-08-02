@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @role = Role.find_by(name: params[:role])
   end
 
   # GET /users/1/edit
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    @role = Role.find(params["user"]["role_id"].to_i)
     @user = User.new(user_params)
 
     respond_to do |format|
@@ -63,6 +65,8 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  
 
   private
   # Use callbacks to share common setup or constraints between actions.

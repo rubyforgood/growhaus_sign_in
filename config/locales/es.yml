@@ -31,6 +31,8 @@ es:
     volunteer_agreement: 'Acuerdo Voluntario'
     volunteer_signed_at: 'Fecha de la Firma de Acuerdo Voluntario'
     volunteer_url: '/volunteer_agreement.pdf'
+    signature_error: '=> Usted necesita añadir /s/ al final de su firma'
+
   role:
     name: 'Trabajo'
     visitor: 'Visitante'

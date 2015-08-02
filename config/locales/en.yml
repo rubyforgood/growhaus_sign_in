@@ -58,6 +58,7 @@ en:
     volunteer_agreement: 'Volunteer Agreement'
     volunteer_signed_at: 'Date of Volunteer Signature'
     volunteer_url: '/volunteer_agreement.pdf'
+    signature_error: '=> You need to add /s/ to the end of your signature'
   role:
     name: 'Role'
     visitor: 'Visitor'
