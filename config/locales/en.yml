@@ -33,6 +33,7 @@ en:
   welcome:
     title: 'Welcome'
     new_link: 'New'
+    new_query: 'What brings you here today?'
     returning_link: 'Returning'
     checkout_link: 'Checkout'
   user:
@@ -59,6 +60,9 @@ en:
     volunteer_url: '/volunteer_agreement.pdf'
   role:
     name: 'Role'
+    visitor: 'Visitor'
+    volunteer: 'Volunteer'
+    intern: 'Intern'
   error: 'error'
   action:
     are_you_sure: 'Are you sure?'

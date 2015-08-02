@@ -6,6 +6,7 @@ es:
   welcome:
     title: 'Bienvenido'
     new_link: 'Nuevo'
+    new_query: '¿Qué te trae aquí hoy?'
     returning_link: 'Volver'
     checkout_link: 'Salir'
   user:
@@ -32,6 +33,9 @@ es:
     volunteer_url: '/volunteer_agreement.pdf'
   role:
     name: 'Trabajo'
+    visitor: 'Visitante'
+    volunteer: 'Voluntario'
+    intern: 'Interno'
   error: 'error'
   action:
     are_you_sure: 'Estás Seguro?'
