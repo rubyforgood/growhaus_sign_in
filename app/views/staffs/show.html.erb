@@ -1,3 +1,8 @@
+<%= render 'partials/admin_options' %>
+
+<br>
+<br>
+
 <p>
   <strong>Name:</strong>
   <%= @staff.name %>
@@ -34,4 +39,4 @@
 </p>
 
 <%= link_to 'Edit', edit_staff_path(@staff) %> |
-<%= link_to 'Back', staffs_path %>
+<%= link_to 'View Staff', staffs_path %>

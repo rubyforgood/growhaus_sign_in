@@ -1,0 +1,8 @@
+= form_for([:staff, @report]) do |f|
+  - if @report.errors.any?
+    div#error_explanation
+      h2 #{pluralize(@report.errors.count, 'error')}
+         prohibited this user from being saved:
+  ul
+    - @report.errors.full_messages.each do |message|
+      li = message

@@ -2,7 +2,7 @@
   - if @user.errors.any?
     div id="error_explanation"
       h2 #{pluralize(@user.errors.count, t("error"))}
-         #{t('user.prohibited_this_from_beging_saved')}:
+         #{t('user.prohibited_this_from_being_saved')}:
 
   ul
     - @user.errors.full_messages.each do |message|
@@ -105,4 +105,3 @@
 
   div class="actions"
     = f.submit class: "btn btn-block btn-primary"
-
