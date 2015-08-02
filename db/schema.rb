@@ -42,6 +42,18 @@ ActiveRecord::Schema.define(version: 20150801220042) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "staffs", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "image_url"
+    t.string   "account_url"
+    t.string   "provider"
+    t.string   "token"
+    t.string   "uid"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -63,17 +75,4 @@ ActiveRecord::Schema.define(version: 20150801220042) do
     t.datetime "photo_release_signed_at"
   end
 
-  create_table "staffs", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "image_url"
-    t.string   "account_url"
-    t.string   "provider"
-    t.string   "token"
-    t.string   "uid"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
 end
-

@@ -4,14 +4,15 @@ class User < ActiveRecord::Base
 
   has_role_intern = ->(user) { user.role_name == "Intern" }
   has_role_volunteer = ->(user) { user.role_name == "Volunteer" }
-  signature_format = %r{\w\s*/s/\Z}
+  signature_format = %r{\w/s/\Z}
+  signature_error_message = I18n.t('user.signature_error')
   validates :name, presence: true
   validates :email, format: /@.*\./, allow_blank: true
   validates :emergency_contact_name, presence: true, if: has_role_intern
   validates :emergency_contact_phone, presence: true, if: has_role_intern
-  validates :waiver_signature, presence: true, format: %r{\w/s/\Z}
-  validates :photo_release, format: signature_format, allow_blank: true
-  validates :volunteer_signature, format: signature_format, allow_blank: true
+  validates :waiver_signature, presence: true, format: {with: signature_format, message: signature_error_message}
+  validates :photo_release, format: {with: signature_format, message: signature_error_message} , allow_blank: true
+  validates :volunteer_signature, format: {with: signature_format, message: signature_error_message} , allow_blank: true
   validates :volunteer_signature, presence: true, if: has_role_volunteer
 
   before_save :touch_changed_timestamps
