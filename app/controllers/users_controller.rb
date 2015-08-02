@@ -1,6 +1,9 @@
 # Users are defined as those outside growhous org. ex: intern, volunteer
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :restrict_access
+  before_action :restrict_to_staff,
+                except: [:index, :new, :new_role, :create]
 
   # GET /users
   # GET /users.json

@@ -10,6 +10,15 @@ class ApplicationController < ActionController::Base
     true
   end
 
+  def restrict_access
+    return if ENV['GROWHAUS_DISABLE_AUTH'].present? && !Rails.env.production?
+    redirect_to login_path unless Staff.where(id: session[:user_id]).first
+  end
+
+  def restrict_to_staff
+    redirect_to welcome_path unless session[:welcome_mode].blank?
+  end
+
   helper_method :current_user
 
   def current_user

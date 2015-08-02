@@ -1,4 +1,6 @@
 class ActivitySessionsController < ApplicationController
+  before_action :restrict_to_staff,
+                except: [:index, :show, :new, :create, :update]
 
   def index
     user = User.find_by(id: activity_session_params["user_id"])

@@ -1,5 +1,8 @@
 # Activities differ by roles. Must log in and log out of activities.
 class ActivitySessionController < ApplicationController
+  before_action :restrict_access
+  before_action :restrict_to_staff, except: [:index, :new, :create, :update]
+
   def index
     @activity_sessions = ActivitySession.all
   end
