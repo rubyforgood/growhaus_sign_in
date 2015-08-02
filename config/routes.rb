@@ -5,11 +5,11 @@ Rails.application.routes.draw do
     get 'login' => 'pages#login'
     get 'welcome' => 'pages#welcome'
 
+    get 'users/new_role' => 'users#new_role'
     resources :users do
       resources :activity_sessions, only: :index
       resources :activities, only: :index
     end
-    get 'users/new_role' => 'users#new_role'
 
     resources :activity_sessions, only: %i[ create update ]
   end

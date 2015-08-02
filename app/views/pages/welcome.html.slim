@@ -4,9 +4,11 @@
 
   br
 
-  = link_to t('welcome.new_link'), '#', class: "btn btn-primary btn-block btn-lg"
+  = link_to(t('welcome.new_link'), users_new_role_path,
+            class: "btn btn-primary btn-block btn-lg")
 
   br
   br
 
-  = link_to t('welcome.returning_link'), users_path, class: "btn btn-block btn-success btn-lg"
+  = link_to(t('welcome.returning_link'), users_path,
+            class: "btn btn-block btn-success btn-lg")
