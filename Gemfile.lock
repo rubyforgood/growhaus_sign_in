@@ -329,7 +329,6 @@ DEPENDENCIES
   better_errors
   bootstrap-sass
   bundler-audit
-  byebug
   capistrano (~> 3.1)
   capistrano-bundler (~> 1.1)
   capistrano-rails (~> 1.1)
