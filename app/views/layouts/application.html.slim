@@ -9,7 +9,7 @@ html
     = csrf_meta_tags
 
   body
-    = render 'partials/i18n_toggle'
+    = render 'partials/i18n_toggle' unless params[:controller] == 'staffs'
     div#background
     div#main.container
       = flash_messages
