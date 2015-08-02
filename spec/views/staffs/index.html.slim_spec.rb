@@ -28,10 +28,5 @@ RSpec.describe "staffs/index", type: :view do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     assert_select "tr>td", :text => "Email".to_s, :count => 2
-    assert_select "tr>td", :text => "Image Url".to_s, :count => 2
-    assert_select "tr>td", :text => "Account Url".to_s, :count => 2
-    assert_select "tr>td", :text => "Provider".to_s, :count => 2
-    assert_select "tr>td", :text => "Token".to_s, :count => 2
-    assert_select "tr>td", :text => "Uid".to_s, :count => 2
   end
 end
