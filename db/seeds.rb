@@ -9,24 +9,24 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Create roles
-roles = ["Volunteer", "Visitor", "Intern"]
+roles = %w(Volunteer Visitor Intern)
 roles = roles.map do |t|
   Role.find_or_create_by(name: t)
 end
 
 # Create activities
-activities_volunteer = ["Food Box Sorting", "Cosechando Salud",
-                        "Hydroponics Farm", "Aquaponics Farm", "Growasis",
-                        "Mushroom Farm", "Education",
-                        "Marketing/Communications", "Spanish Translation",
-                        "Construction/Facilities", "Graphic Design",
-                        "Special Event", "Other"]
+activities_volunteer = ['Food Box Sorting', 'Cosechando Salud',
+                        'Hydroponics Farm', 'Aquaponics Farm', 'Growasis',
+                        'Mushroom Farm', 'Education',
+                        'Marketing/Communications', 'Spanish Translation',
+                        'Construction/Facilities', 'Graphic Design',
+                        'Special Event', 'Other']
 
-activities_intern = ["Hydroponics Farm", "Aquaponics Farm",
-                     "Executive Assistant Intern", "Communication Intern",
-                     "Digital Design Intern", "Service Learning Intern",
-                     "Community Education Intern", "Food Distribution Intern",
-                     "Development Intern"]
+activities_intern = ['Hydroponics Farm', 'Aquaponics Farm',
+                     'Executive Assistant Intern', 'Communication Intern',
+                     'Digital Design Intern', 'Service Learning Intern',
+                     'Community Education Intern', 'Food Distribution Intern',
+                     'Development Intern']
 
 activities_visitor = ["Visiting"]
 

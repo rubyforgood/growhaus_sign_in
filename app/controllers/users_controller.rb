@@ -1,3 +1,4 @@
+# Users are defined as those outside growhous org. ex: intern, volunteer
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -25,13 +26,17 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
+  # rubocop:disable Metrics/MethodLength
   def create
     @role = Role.find(params["user"]["role_id"].to_i)
     @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to user_activity_sessions_path   @user, notice: 'User was successfully created.' }
+        format.html do
+          redirect_to user_activity_sessions_path @user,
+                      notice: 'User was successfully created.'
+        end
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -47,7 +52,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html do
+          redirect_to @user, notice: 'User was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -55,13 +62,16 @@ class UsersController < ApplicationController
       end
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html do
+        redirect_to users_url, notice: 'User was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
@@ -72,12 +82,14 @@ class UsersController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet, only allow the white list
+  # through.
   def user_params
     params.require(:user)
       .permit(:role_id, :name, :email,
