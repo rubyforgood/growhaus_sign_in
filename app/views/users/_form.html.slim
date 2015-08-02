@@ -21,7 +21,7 @@
     = f.label t('user.email')
     br
     = f.text_field :email
-
+ 
   div class="field"
     = f.label t('user.address1')
     br
@@ -30,7 +30,7 @@
   div class="field"
     = f.label t('user.address2')
     br
-    = f.text_field :address2
+    = f.text_field :address2  
 
   div class="field"
     = f.label t('user.city')
@@ -76,20 +76,20 @@
     = f.label "#{t('user.waiver_signature')} *", class: "required"
     br
     = f.text_field "#{:waiver_signature}"
-  p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado
+    p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado
 
   - if @role.try(:name) == "Visitor"
     div class="field"
       = f.label "#{t('user.photo_release')}"
       br
       = f.text_field :photo_release
-    p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado
+      p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado
   - else
     div class="field"
       = f.label "#{t('user.photo_release')} *", class: "required"
       br
       = f.text_field :photo_release
-    p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado    
+      p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado    
   br
   
   - if @role.try(:name) == "Volunteer"
@@ -99,9 +99,10 @@
       = f.label "#{t('user.volunteer_agreement')} *", class: "required"
       br
       = f.text_field :volunteer_signature
-    p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado      
+      p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado          
 
   div class="actions"
-    = f.submit
-
+    = f.submit class: "btn btn-block btn-primary"
+  br
   div class="required" * means the field is required
+
