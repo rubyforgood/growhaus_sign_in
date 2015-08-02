@@ -1,6 +1,0 @@
-ul#messages
-  - flash.each do |name, msgs|
-    - Array(msgs).each do |msg|
-      li[ data-alert class="alert-#{name}"]
-        == msg
-        a.close href="#" &times;
