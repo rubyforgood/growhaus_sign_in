@@ -1,108 +1,108 @@
-.container
-  = form_for(@user) do |f|
-    - if @user.errors.any?
-      div id="error_explanation"
-        h2 #{pluralize(@user.errors.count, t("error"))}
-           #{t('user.prohibited_this_from_beging_saved')}:
+= form_for(@user) do |f|
+  - if @user.errors.any?
+    div id="error_explanation"
+      h2 #{pluralize(@user.errors.count, t("error"))}
+         #{t('user.prohibited_this_from_beging_saved')}:
 
-    ul
-      - @user.errors.full_messages.each do |message|
-        li = message
+  ul
+    - @user.errors.full_messages.each do |message|
+      li = message
 
-    = f.hidden_field :role_id, value: @role.try(:id)
-    div class="rolay" = @role.try(:name)
+  = f.hidden_field :role_id, value: @role.try(:id)
+  div class="rolay" = @role.try(:name)
 
+  br
+  div class="field required"
+    = f.label "#{t('user.name')} *"
     br
+    = f.text_field :name
+
+  div class="field"
+    = f.label t('user.email')
+    br
+    = f.text_field :email
+
+  div class="field"
+    = f.label t('user.address')
+    br
+    = f.text_field :address
+
+  div class="field"
+    = f.label t('user.address')
+    br
+    = f.text_field :address2
+
+  div class="field"
+    = f.label t('user.city')
+    br
+    = f.text_field :city
+
+  div class="field"
+    = f.label t('user.state')
+    br
+    = f.text_field :state
+
+  div class="field"
+    = f.label t('user.zip_code')
+    br
+    = f.text_field :zip_code
+
+  - if @role.try(:name) == "Intern"
     div class="field required"
-      = f.label "#{t('user.name')} *"
+      = f.label t('user.emergency_contact_name')
       br
-      = f.text_field :name
-
-    div class="field"
-      = f.label t('user.email')
-      br
-      = f.text_field :email
-
-    div class="field"
-      = f.label t('user.address')
-      br
-      = f.text_field :address
-
-    div class="field"
-      = f.label t('user.address')
-      br
-      = f.text_field :address2
-
-    div class="field"
-      = f.label t('user.city')
-      br
-      = f.text_field :city
-
-    div class="field"
-      = f.label t('user.state')
-      br
-      = f.text_field :state
-
-    div class="field"
-      = f.label t('user.zip_code')
-      br
-      = f.text_field :zip_code
-
-    - if @role.try(:name) == "Intern"
-      div class="field required"
-        = f.label t('user.emergency_contact_name')
-        br
-        = f.text_field :emergency_contact_name
-
-      div class="field required"
-        = f.label t('user.emergency_contact_phone_number')
-        br
-        = f.text_field :emergency_contact_phone
-
-    - else
-      div class="field"
-        = f.label t('user.emergency_contact_name')
-        br
-        = f.text_field :emergency_contact_name      
-
-      div class="field"
-        = f.label t('user.emergency_contact_phone_number')
-        br
-        = f.text_field :emergency_contact_phone
-
-    br
-    iframe height="200px" src="#{ t('user.waiver_url') }"
+      = f.text_field :emergency_contact_name
 
     div class="field required"
-      = f.label "#{t('user.waiver_signature')} *"
+      = f.label t('user.emergency_contact_phone_number')
       br
-      = f.text_field "#{:waiver_signature}"
+      = f.text_field :emergency_contact_phone
+
+  - else
+    div class="field"
+      = f.label t('user.emergency_contact_name')
+      br
+      = f.text_field :emergency_contact_name      
+
+    div class="field"
+      = f.label t('user.emergency_contact_phone_number')
+      br
+      = f.text_field :emergency_contact_phone
+
+  br
+  iframe height="200px" src="#{ t('user.waiver_url') }"
+
+  div class="field required"
+    = f.label "#{t('user.waiver_signature')} *"
+    br
+    = f.text_field "#{:waiver_signature}"
+  p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado
+
+  - if @role.try(:name) == "Visitor"
+    div class="field"
+      = f.label "#{t('user.photo_release')}"
+      br
+      = f.text_field :photo_release
     p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado
+  - else
+    div class="field required"
+      = f.label "#{t('user.photo_release')} *"
+      br
+      = f.text_field :photo_release
+    p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado    
+  br
+ 
+  - if @role.try(:name) == "Volunteer"
+    iframe height="200px" src="#{ t('user.volunteer_url') }"
 
-    - if @role.try(:name) == "Visitor"
-      div class="field"
-        = f.label "#{t('user.photo_release')}"
-        br
-        = f.text_field :photo_release
-      p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado
-    - else
-      div class="field required"
-        = f.label "#{t('user.photo_release')} *"
-        br
-        = f.text_field :photo_release
-      p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado    
-    br
-    
-    - if @role.try(:name) == "Volunteer"
-      iframe height="200px" src="#{ t('user.volunteer_url') }"
+    div class="field required"
+      = f.label "#{t('user.volunteer_agreement')} *"
+      br
+      = f.text_field :volunteer_signature
+    p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado      
 
-      div class="field required"
-        = f.label "#{t('user.volunteer_agreement')} *"
-        br
-        = f.text_field :volunteer_signature
-      p A /s/ is required after your name for this to be a legal agreenment in the state of Colorado      
+  div class="required" * means the field is required
 
-    div class="actions"
-      = f.submit
+  div class="actions"
+    = f.submit class: "btn btn-block btn-primary"
 
-    div class="required" * means the field is required
