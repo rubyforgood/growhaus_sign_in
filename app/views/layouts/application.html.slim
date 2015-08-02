@@ -5,10 +5,12 @@ html
     = stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true
     = stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext", media: "all"
     = javascript_include_tag "application", 'data-turbolinks-track' => true
+    = content_tag :meta, nil, { name: "viewport", content: "width=device-width, initial-scale=1" }
     = csrf_meta_tags
 
   body
-    = flash_messages
-    div.container
+    div#background
+    div#main.container
+      = flash_messages
       = render 'partials/i18n_toggle'
       = yield

@@ -13,9 +13,10 @@
  */
 
 $font-family-base: Lato;
+$body-bg: #9FC947;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "login";
 @import "activities";
 @import "dataTables/bootstrap/3/jquery.dataTables.bootstrap";
 
@@ -36,4 +37,15 @@ iframe {
 .rolay {
   color: green;
   font-size: 1.9em;
+}
+
+#background {
+  background: url("growhaus_logo.png") no-repeat center center fixed;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
