@@ -1,1 +1,6 @@
-= link_to @i18n_toggle_locale_text, url_for(@i18n_toggle_locale_param), class: "navbar-right"
+nav class="navbar navbar-inverse"
+  div class="container"
+    div class="navbar-header"
+      a class="navbar-brand navbar-right" href="#{url_for(@i18n_toggle_locale_param)}" = @i18n_toggle_locale_text
+    div class="navbar-collapse collapse"
+      ul class="nav navbar-nav"
