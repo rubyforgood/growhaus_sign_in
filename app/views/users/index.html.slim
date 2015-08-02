@@ -9,5 +9,4 @@ table.table.dataTable.growhaus-sign-in-table
       tr
         td = link_to user.name, user_activity_sessions_path(user.id)
 
-ul#navigation-buttons.list-unstyled
-  li = button_to t('action.go_back'), welcome_path, method: "get", class: "btn btn-block btn-danger"
+= link_to t('action.go_back'), welcome_path, class: "btn btn-block btn-danger button-back"
