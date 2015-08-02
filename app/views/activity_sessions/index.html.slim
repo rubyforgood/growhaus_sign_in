@@ -16,6 +16,6 @@ table.table.table-striped
             td
               = form_tag "/activity_sessions/#{activity_session.id}", method: "put" do
                 = hidden_field_tag :checkout, "true"
-                = button_tag "#{t('action.check_out')}"
+                = button_tag "#{t('action.check_out')}", class: "btn btn-default"
 
 = button_to t('action.check_in'), user_activities_path, method: "get", class: "btn btn-block"
