@@ -1,17 +1,12 @@
-p id="notice" = notice
+h1 Staff
 
-h1 Listing Staffs
-
-table
+table.table.dataTable.table-striped
   thead
     tr
-      th Name
-      th Email
-      th
-
+      th Full Name
+      th Email Address
   tbody
     - @staffs.each do |staff|
       tr
-        td = staff.name
+        td = link_to staff.name, staff
         td = staff.email
-        td = link_to 'Show', staff
