@@ -9,7 +9,7 @@ html
     = csrf_meta_tags
 
   body
-    = render 'partials/i18n_toggle' unless params[:controller] == 'staffs'
+    = render 'partials/i18n_toggle' if localized?
     div#background
     div#main.container
       = flash_messages
