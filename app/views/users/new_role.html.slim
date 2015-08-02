@@ -1,14 +1,13 @@
-div.container
-  h1 = t('welcome.title')
-  h1 = t('welcome.new_query')
+h1 = t('welcome.title')
+h1 = t('welcome.new_query')
+br
+div
+  = link_to(t("role.visitor"),   new_user_path(role: "Visitor"),
+            class: "btn btn-block btn-primary btn-lg")
   br
-  div
-    = link_to(t("role.visitor"),   new_user_path(role: "Visitor"),
-              class: "btn btn-block btn-primary btn-lg")
-    br
-    = link_to(t("role.volunteer"), new_user_path(role: "Volunteer"),
-              class: "btn btn-block btn-success btn-lg")
-    br
-    = link_to(t("role.intern"),    new_user_path(role: "Intern"),
-              class: "btn btn-block btn-info btn-lg")
-    br
+  = link_to(t("role.volunteer"), new_user_path(role: "Volunteer"),
+            class: "btn btn-block btn-success btn-lg")
+  br
+  = link_to(t("role.intern"),    new_user_path(role: "Intern"),
+            class: "btn btn-block btn-info btn-lg")
+  br

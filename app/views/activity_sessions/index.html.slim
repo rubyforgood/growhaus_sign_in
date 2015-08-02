@@ -1,22 +1,21 @@
-div.container
-  h1 = t('activity_session.index_title')
+h1 = t('activity_session.index_title')
 
-  table.table.table-striped
-    thead
-      tr
-        th = t('activity_session.name')
-        th = t('activity_session.start_time')
-        th
+table.table.table-striped
+  thead
+    tr
+      th = t('activity_session.name')
+      th = t('activity_session.start_time')
+      th
 
-      tbody
-        - @activity_sessions.each do |activity_session|
-          - unless activity_session.closed?
-            tr
-              td = activity_session.activity.name
-              td = activity_session.start_time.localtime.strftime('%l:%M %P')
-              td
-                = form_tag "/#{@locale}/activity_sessions/#{activity_session.id}", method: "put" do
-                  = hidden_field_tag :checkout, "true"
-                  = button_tag "#{t('action.check_out')}", class: "btn btn-default"
+    tbody
+      - @activity_sessions.each do |activity_session|
+        - unless activity_session.closed?
+          tr
+            td = activity_session.activity.name
+            td = activity_session.start_time.localtime.strftime('%l:%M %P')
+            td
+              = form_tag "/#{@locale}/activity_sessions/#{activity_session.id}", method: "put" do
+                = hidden_field_tag :checkout, "true"
+                = button_tag "#{t('action.check_out')}", class: "btn btn-default"
 
-  = button_to t('action.check_in'), user_activities_path, method: "get", class: "btn btn-block"
+= button_to t('action.check_in'), user_activities_path, method: "get", class: "btn btn-block"
