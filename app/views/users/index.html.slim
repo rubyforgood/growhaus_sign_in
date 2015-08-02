@@ -9,4 +9,4 @@ div.container
     tbody
       - @users.each do |user|
         tr
-          td = link_to user.name, "/users/#{user.id}/activity_sessions"
+          td = link_to user.name, "/#{@locale}/users/#{user.id}/activity_sessions"

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @locale = params["locale"]
   end
 
   # GET /users/1
