@@ -1,0 +1,12 @@
+h1 Staff
+
+table.table.dataTable.table-striped
+  thead
+    tr
+      th Full Name
+      th Email Address
+  tbody
+    - @staffs.each do |staff|
+      tr
+        td = link_to staff.name, staff
+        td = staff.email

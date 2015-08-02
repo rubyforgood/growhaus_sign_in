@@ -4,11 +4,10 @@ table.table.dataTable.table-striped
   thead
     tr
       th = t('user.name')
-
   tbody
     - @users.each do |user|
       tr
-        td = link_to user.name, "/#{@locale}/users/#{user.id}/activity_sessions"
+        td = link_to user.name, user_activity_sessions_path(user.id)
 
 ul#navigation-buttons.list-unstyled
   li = button_to t('action.go_back'), welcome_path, method: "get", class: "btn btn-block"
