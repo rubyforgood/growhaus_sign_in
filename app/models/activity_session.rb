@@ -1,3 +1,4 @@
+# Start time and end time of activities are tracked for some roles
 class ActivitySession < ActiveRecord::Base
   belongs_to :user
   belongs_to :activity

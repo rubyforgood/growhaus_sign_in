@@ -1,11 +1,13 @@
+# Requirements for the intern role
 class User < ActiveRecord::Base
   belongs_to :role
   has_many :activity_sessions
 
-  has_role_intern = ->(user) { user.role_name == "Intern" }
-  has_role_volunteer = ->(user) { user.role_name == "Volunteer" }
+  has_role_intern = ->(user) { user.role_name == 'Intern' }
+  has_role_volunteer = ->(user) { user.role_name == 'Volunteer' }
   signature_format = %r{\w/s/\Z}
   signature_error_message = I18n.t('user.signature_error')
+
   validates :name, presence: true
   validates :email, format: /@.*\./, allow_blank: true
   validates :emergency_contact_name, presence: true, if: has_role_intern

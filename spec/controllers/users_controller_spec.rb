@@ -19,31 +19,30 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe UsersController, type: :controller do
-
   # This should return the minimal set of attributes required to create a valid
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     {
-      name: "Test User",
-      email: "test@example.org",
-      address: "123 Main Street",
-      address2: "Apt 101",
-      city: "Denver",
-      state: "CO",
-      zip_code: "99999",
-      emergency_contact_name: "Test Contact",
-      emergency_contact_phone: "555-867-5309",
-      waiver_signature: "Test User/s/",
-      photo_release: "Test User/s/",
-      volunteer_signature: "Test User/s/",
+      name: 'Test User',
+      email: 'test@example.org',
+      address: '123 Main Street',
+      address2: 'Apt 101',
+      city: 'Denver',
+      state: 'CO',
+      zip_code: '99999',
+      emergency_contact_name: 'Test Contact',
+      emergency_contact_phone: '555-867-5309',
+      waiver_signature: 'Test User/s/',
+      photo_release: 'Test User/s/',
+      volunteer_signature: 'Test User/s/',
       role_id: 1
     }
-  }
+  end
 
-  let(:invalid_attributes) {
-    { name: "Test User", emergency_contact_number: "Test Contact", role_id: 1 }
-  }
+  let(:invalid_attributes) do
+    { name: 'Test User', emergency_contact_number: 'Test Contact', role_id: 1 }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -54,8 +53,8 @@ RSpec.describe UsersController, type: :controller do
     load "#{Rails.root}/db/seeds.rb"
   end
 
-  describe "GET #index" do
-    it "assigns all users as @users" do
+  describe 'GET #index' do
+    it 'assigns all users as @users' do
       user = User.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:users)).to eq([user])
@@ -70,72 +69,75 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "GET #show" do
-    it "assigns the requested user as @user" do
+  describe 'GET #show' do
+    it 'assigns the requested user as @user' do
       user = User.create! valid_attributes
-      get :show, {:id => user.to_param}, valid_session
+      get :show, { id: user.to_param }, valid_session
       expect(assigns(:user)).to eq(user)
     end
   end
 
-  describe "GET #new" do
-    it "assigns a new user as @user" do
+  describe 'GET #new' do
+    it 'assigns a new user as @user' do
       get :new, {}, valid_session
       expect(assigns(:user)).to be_a_new(User)
     end
   end
 
-  describe "GET #edit" do
-    it "assigns the requested user as @user" do
+  describe 'GET #edit' do
+    it 'assigns the requested user as @user' do
       user = User.create! valid_attributes
-      get :edit, {:id => user.to_param}, valid_session
+      get :edit, { id: user.to_param }, valid_session
       expect(assigns(:user)).to eq(user)
     end
   end
 
-  describe "POST #create" do
-    context "with valid params" do
-      it "creates a new User" do
-        expect {
-          post :create, {:user => valid_attributes}, valid_session
-        }.to change(User, :count).by(1)
+  describe 'POST #create' do
+    context 'with valid params' do
+      it 'creates a new User' do
+        expect { post :create, { user: valid_attributes }, valid_session }
+          .to change(User, :count).by(1)
         expect(User.count).to eq 1
         expect(User.first.role_id).to eq 1
       end
 
-      it "assigns a newly created user as @user" do
-        post :create, {:user => valid_attributes}, valid_session
+      it 'assigns a newly created user as @user' do
+        post :create, { user: valid_attributes }, valid_session
         expect(assigns(:user)).to be_a(User)
         expect(assigns(:user)).to be_persisted
       end
 
-      it "redirects to the created user" do
-        post :create, {:user => valid_attributes}, valid_session
-        expect(response).to redirect_to(user_activity_sessions_path User.first, notice: 'User was successfully created.')
+      it 'redirects to the created user' do
+        post :create, { :user => valid_attributes }, valid_session
+        path =
+          user_activity_sessions_path User.first,
+                                      notice: 'User was successfully created.'
+        expect(response).to redirect_to(path)
+        expect(response).to redirect_to(User.last)
       end
     end
 
-    context "with invalid params" do
-      it "assigns a newly created but unsaved user as @user" do
-        post :create, {:user => invalid_attributes}, valid_session
+    context 'with invalid params' do
+      it 'assigns a newly created but unsaved user as @user' do
+        post :create, { user: invalid_attributes }, valid_session
         expect(assigns(:user)).to be_a_new(User)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:user => invalid_attributes}, valid_session
-        expect(response).to render_template("new")
+        post :create, { user: invalid_attributes }, valid_session
+        expect(response).to render_template('new')
       end
     end
 
-    context "without user" do
-      let(:attributes) {
+    context 'without user' do
+      let(:attributes) do
         {
-          name: "",
-          email: "test@example.org",
-          role_id: Role.find_by(name: "Visitor").id,
-          waiver_signature: "Test User/s/"
+          name: '',
+          email: 'test@example.org',
+          role_id: Role.find_by(name: 'Visitor').id,
+          waiver_signature: 'Test User/s/'
         }
-      }
+      end
 
       it "doesn't modify the database" do
         expect { post :create, { user: attributes }, valid_session }
@@ -143,15 +145,15 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    context "without email domain" do
-      let(:attributes) {
+    context 'without email domain' do
+      let(:attributes) do
         {
-          name: "Test User",
-          email: "test@example",
-          role_id: Role.find_by(name: "Visitor").id,
-          waiver_signature: "Test User/s/"
+          name: 'Test User',
+          email: 'test@example',
+          role_id: Role.find_by(name: 'Visitor').id,
+          waiver_signature: 'Test User/s/'
         }
-      }
+      end
 
       it "doesn't modify the database" do
         expect { post :create, { user: attributes }, valid_session }
@@ -159,16 +161,16 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    context "intern without emergency contact name" do
-      let(:attributes) {
+    context 'intern without emergency contact name' do
+      let(:attributes) do
         {
-          name: "Test User",
-          email: "test@example.org",
-          role_id: Role.find_by(name: "Intern").id,
-          waiver_signature: "Test User/s/",
-          emergency_contact_phone: "555-867-5309"
+          name: 'Test User',
+          email: 'test@example.org',
+          role_id: Role.find_by(name: 'Intern').id,
+          waiver_signature: 'Test User/s/',
+          emergency_contact_phone: '555-867-5309'
         }
-      }
+      end
 
       it "doesn't modify the database" do
         expect { post :create, { user: attributes }, valid_session }
@@ -176,16 +178,16 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    context "intern without emergency contact number" do
-      let(:attributes) {
+    context 'intern without emergency contact number' do
+      let(:attributes) do
         {
-          name: "Test User",
-          email: "test@example.org",
-          role_id: Role.find_by(name: "Intern").id,
-          waiver_signature: "Test User/s/",
-          emergency_contact_name: "Test Contact"
+          name: 'Test User',
+          email: 'test@example.org',
+          role_id: Role.find_by(name: 'Intern').id,
+          waiver_signature: 'Test User/s/',
+          emergency_contact_name: 'Test Contact'
         }
-      }
+      end
 
       it "doesn't modify the database" do
         expect { post :create, { user: attributes }, valid_session }
@@ -193,15 +195,15 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    context "volunteer without agreement signature" do
-      let(:attributes) {
+    context 'volunteer without agreement signature' do
+      let(:attributes) do
         {
-          name: "Test User",
-          email: "test@example.org",
-          role_id: Role.find_by(name: "Intern").id,
-          waiver_signature: "Test User/s/"
+          name: 'Test User',
+          email: 'test@example.org',
+          role_id: Role.find_by(name: 'Intern').id,
+          waiver_signature: 'Test User/s/'
         }
-      }
+      end
 
       it "doesn't modify the database" do
         expect { post :create, { user: attributes }, valid_session }
@@ -209,14 +211,14 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    context "without liability waiver signature" do
-      let(:attributes) {
+    context 'without liability waiver signature' do
+      let(:attributes) do
         {
-          name: "Test User",
-          email: "test@example.org",
-          role_id: Role.find_by(name: "Visitor").id
+          name: 'Test User',
+          email: 'test@example.org',
+          role_id: Role.find_by(name: 'Visitor').id
         }
-      }
+      end
 
       it "doesn't modify the database" do
         expect { post :create, { user: attributes }, valid_session }
@@ -224,15 +226,15 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    context "invalid liability waiver signature" do
-      let(:attributes) {
+    context 'invalid liability waiver signature' do
+      let(:attributes) do
         {
-          name: "Test User",
-          email: "test@example.org",
-          role_id: Role.find_by(name: "Visitor").id,
-          waiver_signature: "Test User/s"
+          name: 'Test User',
+          email: 'test@example.org',
+          role_id: Role.find_by(name: 'Visitor').id,
+          waiver_signature: 'Test User/s'
         }
-      }
+      end
 
       it "doesn't modify the database" do
         expect { post :create, { user: attributes }, valid_session }
@@ -240,16 +242,16 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    context "invalid photography release signature" do
-      let(:attributes) {
+    context 'invalid photography release signature' do
+      let(:attributes) do
         {
-          name: "Test User",
-          email: "test@example.org",
-          role_id: Role.find_by(name: "Visitor").id,
-          waiver_signature: "Test User/s/",
-          photo_release: "Test User/s"
+          name: 'Test User',
+          email: 'test@example.org',
+          role_id: Role.find_by(name: 'Visitor').id,
+          waiver_signature: 'Test User/s/',
+          photo_release: 'Test User/s'
         }
-      }
+      end
 
       it "doesn't modify the database" do
         expect { post :create, { user: attributes }, valid_session }
@@ -258,62 +260,63 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {
-        { name: "Other Name" }
-      }
+  describe 'PUT #update' do
+    context 'with valid params' do
+      let(:new_attributes) { { name: 'Other Name' } }
 
-      it "updates the requested user" do
+      it 'updates the requested user' do
         user = User.create! valid_attributes
-        put :update, {:id => user.to_param, :user => new_attributes}, valid_session
+        put :update, { id: user.to_param, user: new_attributes },
+            valid_session
         user.reload
-        expect(user.name).to eq "Other Name"
+        expect(user.name).to eq 'Other Name'
       end
 
-      it "assigns the requested user as @user" do
+      it 'assigns the requested user as @user' do
         user = User.create! valid_attributes
-        put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
+        put :update, { id: user.to_param, user: valid_attributes },
+            valid_session
         expect(assigns(:user)).to eq(user)
       end
 
-      it "redirects to the user" do
+      it 'redirects to the user' do
         user = User.create! valid_attributes
-        put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
+        put :update, { id: user.to_param, user: valid_attributes },
+            valid_session
         expect(response).to redirect_to(user)
       end
     end
 
-    context "with invalid params" do
+    context 'with invalid params' do
       render_views
 
-      it "assigns the user as @user" do
+      it 'assigns the user as @user' do
         user = User.create! valid_attributes
-        put :edit, {:id => user.to_param, :user => invalid_attributes}, valid_session
+        put :edit, { id: user.to_param, user: invalid_attributes },
+            valid_session
         expect(assigns(:user)).to eq(user)
       end
 
       it "re-renders the 'edit' template" do
         user = User.create! valid_attributes
-        put :edit, {:id => user.to_param, :user => invalid_attributes}, valid_session
-        expect(response).to render_template("edit")
+        put :edit, { id: user.to_param, user: invalid_attributes },
+            valid_session
+        expect(response).to render_template('edit')
       end
     end
   end
 
-  describe "DELETE #destroy" do
-    it "destroys the requested user" do
+  describe 'DELETE #destroy' do
+    it 'destroys the requested user' do
       user = User.create! valid_attributes
-      expect {
-        delete :destroy, {:id => user.to_param}, valid_session
-      }.to change(User, :count).by(-1)
+      expect { delete :destroy, { id: user.to_param }, valid_session }
+        .to change(User, :count).by(-1)
     end
 
-    it "redirects to the users list" do
+    it 'redirects to the users list' do
       user = User.create! valid_attributes
-      delete :destroy, {:id => user.to_param}, valid_session
+      delete :destroy, { id: user.to_param }, valid_session
       expect(response).to redirect_to(users_url)
     end
   end
-
 end
