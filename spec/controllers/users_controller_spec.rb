@@ -113,7 +113,6 @@ RSpec.describe UsersController, type: :controller do
           user_activity_sessions_path User.first,
                                       notice: 'User was successfully created.'
         expect(response).to redirect_to(path)
-        expect(response).to redirect_to(User.last)
       end
     end
 
