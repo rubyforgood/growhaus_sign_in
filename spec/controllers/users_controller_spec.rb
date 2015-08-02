@@ -42,7 +42,7 @@ RSpec.describe UsersController, type: :controller do
   }
 
   let(:invalid_attributes) {
-    { name: "Test User", emergency_contact_number: "Test Contact" }
+    { name: "Test User", emergency_contact_number: "Test Contact", role_id: 1 }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -103,7 +103,7 @@ RSpec.describe UsersController, type: :controller do
 
       it "redirects to the created user" do
         post :create, {:user => valid_attributes}, valid_session
-        expect(response).to redirect_to(User.last)
+        expect(response).to redirect_to(user_activity_sessions_path User.first, notice: 'User was successfully created.')
       end
     end
 
