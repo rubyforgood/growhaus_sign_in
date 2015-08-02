@@ -1,0 +1,14 @@
+div.container
+  h1 Welcome to The Growhaus!
+  h1 What brings you here today?
+  br
+  div
+    = link_to("Just Visiting",     new_user_path(role: "Visitor"),
+              class: "btn btn-block btn-primary btn-lg")
+    br
+    = link_to("Here to Volunteer", new_user_path(role: "Volunteer"),
+              class: "btn btn-block btn-success btn-lg")
+    br
+    = link_to("I am an Intern",    new_user_path(role: "Intern"),
+              class: "btn btn-block btn-info btn-lg")
+    br
