@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
+  # rubocop:disable Metrics/MethodLength
   def create
     @role = Role.find(params["user"]["role_id"].to_i)
     @user = User.new(user_params)
@@ -55,6 +56,7 @@ class UsersController < ApplicationController
       end
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
   # DELETE /users/1
   # DELETE /users/1.json
