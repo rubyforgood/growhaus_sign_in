@@ -73,6 +73,7 @@ en:
     destroy: 'Destroy'
     check_in: 'Check In'
     check_out: 'Check Out'
+    go_back: 'Back'
   activity_session:
     name: 'Activity Name'
     start_time: 'Start Time'

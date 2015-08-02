@@ -9,3 +9,6 @@ table.table.dataTable.table-striped
     - @users.each do |user|
       tr
         td = link_to user.name, "/#{@locale}/users/#{user.id}/activity_sessions"
+
+ul#navigation-buttons.list-unstyled
+  li = button_to t('action.go_back'), welcome_path, method: "get", class: "btn btn-block"

@@ -46,6 +46,7 @@ es:
     destroy: 'Eliminar'
     check_in: 'Iniciar Sesión'
     check_out: 'Cerrar Sesión'
+    go_back: 'Retrocedar'
   activity_session:
     name: 'Nombre de la Actividad'
     start_time: 'Hora de inicio'
