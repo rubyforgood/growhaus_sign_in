@@ -48,4 +48,7 @@ table class="dataTableAdminIndex"
                         data: { confirm: t('action.are_you_sure') }
 br
 
-= link_to t('user.new_title'), new_user_path
+div #{t('user.new_title')} |
+    #{link_to t('role.visitor'), new_user_path(role: 'Visitor')} |
+    #{link_to t('role.volunteer'), new_user_path(role: 'Volunteer')} |
+    #{link_to t('role.intern'), new_user_path(role: 'Intern')}
