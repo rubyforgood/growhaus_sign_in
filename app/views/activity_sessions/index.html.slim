@@ -18,4 +18,6 @@ table.table.table-striped
                 = hidden_field_tag :checkout, "true"
                 = button_tag "#{t('action.check_out')}", class: "btn btn-default"
 
-= button_to t('action.check_in'), user_activities_path, method: "get", class: "btn btn-block"
+ul#navigation-buttons.list-unstyled
+  li = button_to t('action.check_in'), user_activities_path, method: "get", class: "btn btn-block"
+  li = button_to t('action.go_back'), welcome_path, method: "get", class: "btn btn-block"
