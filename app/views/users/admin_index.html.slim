@@ -1,0 +1,54 @@
+p id="notice" = notice
+
+h1 = t('user.index_title')
+
+table class="dataTableAdminIndex"
+  thead
+    tr
+      th = t('user.name')
+      th = t('user.email')
+      th = t('user.address')
+      th = t('user.address')
+      th = t('user.city')
+      th = t('user.state')
+      th = t('user.zip_code')
+      th = t('user.emergency_contact_name')
+      th = t('user.emergency_contact_phone')
+      th = t('user.waiver_signature')
+      th = t('user.waiver_signed_at')
+      th = t('user.photo_release')
+      th = t('user.photo_release_signed_at')
+      th = t('user.volunteer_agreement')
+      th = t('user.volunteer_signed_at')
+      th = t('user.role')
+      th colspan="3"
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.name
+        td = user.email
+        td = user.address
+        td = user.address2
+        td = user.city
+        td = user.state
+        td = user.zip_code
+        td = user.emergency_contact_name
+        td = user.emergency_contact_phone
+        td = user.waiver_signature
+        td = user.waiver_signed_at.try(:to_date)
+        td = user.photo_release
+        td = user.photo_release_signed_at.try(:to_date)
+        td = user.volunteer_signature
+        td = user.volunteer_signed_at.try(:to_date)
+        td = user.role_name
+        td = link_to t('action.show'), user
+        td = link_to t('action.edit'), edit_user_path(user)
+        td = link_to t('action.destroy'), user, method: :delete,
+                        data: { confirm: t('action.are_you_sure') }
+br
+
+div #{t('user.new_title')} |
+    #{link_to t('role.visitor'), new_user_path(role: 'Visitor')} |
+    #{link_to t('role.volunteer'), new_user_path(role: 'Volunteer')} |
+    #{link_to t('role.intern'), new_user_path(role: 'Intern')}

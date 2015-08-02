@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     resources :users do
       resources :activity_sessions, only: :index
       resources :activities, only: :index
+      collection do
+        get 'admin_index' => 'users#admin_index'
+      end
     end
 
     resources :activity_sessions, only: %i[ create update ]
