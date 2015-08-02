@@ -36,6 +36,7 @@ en:
     new_query: 'What brings you here today?'
     returning_link: 'Returning'
     checkout_link: 'Checkout'
+    thank_you: 'Thank You!'
   user:
     name: 'Name'
     email: 'Email'

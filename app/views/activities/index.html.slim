@@ -4,7 +4,7 @@ div.container
   ul#activity-list.list-unstyled
     - @activities.each do |activity|
       li
-        = form_tag "/activity_sessions", method: "post" do
+        = form_tag "/#{@locale}/activity_sessions", method: "post" do
           = hidden_field_tag :user_id, @user.id if @user
           = hidden_field_tag :activity_id, activity.id
           = button_tag activity.name, class: "btn btn-block"

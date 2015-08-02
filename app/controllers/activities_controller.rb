@@ -7,6 +7,7 @@ class ActivitiesController < ApplicationController
     else
       @activities = Activity.all
     end
+    @locale = params["locale"]
   end
 
   private
