@@ -36,6 +36,7 @@ RSpec.describe UsersController, type: :controller do
       emergency_contact_phone: "555-867-5309",
       waiver_signature: "Test User/s/",
       photo_release: "Test User/s/",
+      volunteer_signature: "Test User/s/",
       role_id: 1
     }
   }
@@ -175,6 +176,22 @@ RSpec.describe UsersController, type: :controller do
           role_id: Role.find_by(name: "Intern").id,
           waiver_signature: "Test User/s/",
           emergency_contact_name: "Test Contact"
+        }
+      }
+
+      it "doesn't modify the database" do
+        expect { post :create, { user: attributes }, valid_session }
+          .to change(User, :count).by(0)
+      end
+    end
+
+    context "volunteer without agreement signature" do
+      let(:attributes) {
+        {
+          name: "Test User",
+          email: "test@example.org",
+          role_id: Role.find_by(name: "Intern").id,
+          waiver_signature: "Test User/s/"
         }
       }
 
